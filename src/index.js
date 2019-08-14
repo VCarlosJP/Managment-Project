@@ -1,12 +1,20 @@
 //Server Code
 const express = require('express');
 const morgan = require('morgan');
-const routes = require('./routes/tasks.js');
 const mongoose = require ('mongoose');
 
+//Routes
+const routes = require('./routes/Activity');
+//const routes = require('./routes/tasks.js');
+
 const app = express();
-mongoose.connect('mongodb://localhost/mevn-database')
-    .then(db => console.log("DB is connected"))
+
+
+mongoose.connect('mongodb://localhost/ManagmentProject')
+    .then(db => {
+        console.log("DB is connected");
+        
+    })
     .catch(err => console.log(err));
 
 
@@ -29,3 +37,4 @@ app.use(express.static(__dirname + '/public'));
 app.listen(3000,'192.168.0.16' , () => {
     console.log("Server is Working");
 });
+
