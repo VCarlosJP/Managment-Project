@@ -110,7 +110,6 @@
 </template>
 
 <script>
-import addActiviesModal from '../components/addActiviesModal.vue';
 import axios from 'axios';
 
 class Activity {

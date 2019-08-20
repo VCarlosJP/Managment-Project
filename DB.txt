@@ -1,0 +1,30 @@
+Year
+    Month
+        Day
+            InitialHour
+            InitialMin
+            InitialTime
+            Category
+            FinalHour
+            FinalMin
+            FinalTime
+            Activity
+            Hour
+            Minutes
+
+2019
+    August
+        13
+            8
+            14
+            AM
+            Category1
+            12
+            44
+            PM
+            Data Test
+            4
+            30
+
+
+            
