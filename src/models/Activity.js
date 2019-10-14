@@ -16,4 +16,14 @@ const Activity = new Schema({
     Hours: String
 });
 
+const Activities = new Schema({
+    year: Number,
+    month: Number,
+    day: Number,
+    activity: []
+});
+
+
+
 module.exports = mongoose.model('Activity', Activity);
+module.exports = mongoose.model('Activities', Activities);

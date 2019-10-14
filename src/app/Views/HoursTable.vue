@@ -3,6 +3,7 @@
 <div class="row pt-5 ">
     <div class="col"></div>
     <div class="col-8">
+        
          <div class="d-flex justify-content-between">
              <h3>Martes 6 de Agosto 2019</h3>
              <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal">+ Nueva Actividad</button>
@@ -134,17 +135,15 @@ export default {
   data() {
     return {
         Activities: [],
-        Activity: new Activity()
+        Activity: new Activity(),
     };
   },
   mounted(){
-      this.getActivities();
-      //(24 + InitialHour)-(FinalHour+10);
-      //alert((14);
+      this.getActivities(this.$route.params.day, this.$route.params.month, this.$route.params.year);
   },
   methods: {
-      getActivities() {
-          axios.get('http://192.168.0.16:3000/Activities')
+      getActivities(day, month, year) {
+          axios.get('http://192.168.0.16:3000/Activities/'+day+'/'+month+'/'+year)
             .then(response => {
                this.Activities = response.data;
             })

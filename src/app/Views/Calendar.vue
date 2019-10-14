@@ -34,11 +34,11 @@
                     </tr>
                 </thead>
                 <tbody id="calendar-body">
-                    <!-- <tr v-for="row in 4">
+                    <tr v-for="row in 4">
                     <td v-for="column in 7">
-                        <div style="height: 90px;">{{ column }}</div>
+                        <div style="height: 90px;" @click="getActivities()">{{ column }}</div>
                     </td>
-                    </tr> -->
+                    </tr>
                 </tbody> 
                 </table>
         </div>
@@ -73,9 +73,12 @@ export default {
 
     },
     mounted(){
-        this.showCalendar(this.numberMonth, this.selectedYear);
+        //this.showCalendar(this.numberMonth, this.selectedYear);
     },
     methods: {
+        getActivities(){
+            console.log("Works");
+        },
         changeCalendar(){
             this.showCalendar(this.Months.indexOf(this.selectedMonth), this.selectedYear);
         },
@@ -118,11 +121,15 @@ export default {
 
                         else {
                             let cell = document.createElement("td");
+                            
                             let cellText = document.createTextNode(date);
                             // if (date === currentDate && Year === currentYear && Month === currentMonth) {
                             //     cell.classList.add("bg-info");
                             // }
                             cell.appendChild(cellText);
+                            cell.onclick = function () {
+                                console.log("Hello There");
+                            };
                             row.appendChild(cell);
                             date++;
                             
